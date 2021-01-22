@@ -21,3 +21,13 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     
+
+  deploy-dev:
+    name: Deploy Desenvolvimento
+    runs-on: ubuntu-latest
+    environment: dev
+    needs: [build]
+    steps:
+    
+    - name: Teste
+      run: echo 'Deploy Dev'
