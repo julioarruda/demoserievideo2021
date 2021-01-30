@@ -1,11 +1,12 @@
 name: Demo Self Hosted
 
 on:
-  workflow_dispatch:
+  pull_request:
+    types: [labeled]
 
 jobs:
   build:
-
+    if: contains( github.event.label.name, 'deploy dev')
     runs-on: self-hosted
 
     steps:
